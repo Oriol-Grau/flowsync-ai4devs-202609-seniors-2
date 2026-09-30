@@ -275,3 +275,21 @@ El sistema SHALL permitir cerrar la sesión desde el perfil con el botón "Cerra
 #### Scenario: Cierre de sesión con el servidor caído
 - **WHEN** la persona pulsa "Cerrar sesión" y el servidor no responde
 - **THEN** igualmente acaba en `/login` sin sesión y sin ningún aviso rojo
+
+## TAREA B
+
+1. Cuántos requisitos escribió el agente, y cuántos comprobaste tú abriendo el código.
+Agente: 52
+Revisados: 23
+
+2. Las incoherencias que aparecieron al escribirla.
+
+Requirement: Pantalla — Cierre de sesión, donde se ve como pone pantalla y tal pantalla no existe.
+
+3. Lo que no supiste decidir si era un bug o el contrato. 
+
+   Scenario: Contraseña incorrecta
+    - **WHEN** se envía el login con el email de una cuenta existente y una contraseña que no es la suya, sea cual sea su longitud
+    - **THEN** responde 400 con `{ "errors": [...] }` y sin token
+
+    En el requerimiento dice que no hay que mostrar el campo que no es valido, pero en el **THEN** dice devolver el campo errors con el campo que ha fallado.
