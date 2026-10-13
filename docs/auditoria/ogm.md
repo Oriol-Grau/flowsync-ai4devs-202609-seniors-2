@@ -33,3 +33,18 @@
 - **R5 y `.adonisjs/`:** la regla dice que lo que se commitea es el diff regenerado de `.adonisjs/`, pero `cbe9617` no toca `.adonisjs/`. No se ha regenerado para comprobar si debía cambiar, porque eso escribiría en el árbol.
 - **R5 solo existe para `tasks`:** `docs/capabilities/` solo tiene `tasks/`. `auth` no tiene README, y sus tres controladores no llevan ninguna anotación `@Api*`: un cambio en `auth` no podría cumplir la regla tal como está escrita.
 - **Fuera de las reglas de proceso:** `CLAUDE.md` afirma que «la capability `tasks` no tiene ni un test», pero `4427afc` añadió `backend/tests/functional/tasks/assignee.spec.ts`. La descripción está desfasada.
+
+## Parte B
+
+1. La regla en la que más te equivocaste. Compara tu expectativa inicial con el veredicto final y elige la que más se alejó de lo que pensabas. Si acertaste todas, indícalo y explica en una frase en qué te apoyaste para acertar. Si solo era una impresión, también conviene dejarlo por escrito.
+
+**R3.** No commitear directamente en `main` ni en ninguna `sN/*`. pensava que esta regla era bastante clara pero no se cumple.
+
+2. Una regla que no se puede comprobar con la información disponible. Explica en una frase qué tendría que cambiar para poder verificarla. Puede ser reformularla, convertirla en una comprobación automática o aceptar que no deja una evidencia clara.
+
+**R7.** Pasar el subagente `adversarial-reviewer` sobre ese PR una sola vez, como último paso antes de dar la unidad por terminada. El informe que genera no se guarda solo se muestra en la salida del agente.
+
+3. La regla que eliminarías y por qué. Hay dos casos habituales: una regla que ya garantiza otra herramienta o una que nadie sigue y que tampoco aporta valor. Elige una y explica a cuál de los dos casos pertenece.
+
+**R8.** Al abrir el PR, responder en el chat solo con su URL, sin repetir el resumen.
+No aporta nada, al contrario no da feedback del trabajo hecho.

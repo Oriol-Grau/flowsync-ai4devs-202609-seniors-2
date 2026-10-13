@@ -22,14 +22,24 @@ Borra el ejemplo de abajo cuando escribas el primero.
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** Opus 5.5 xMedium
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
+contrasta las reglas con los últimos 15 commits del repositorio y el estado actual de los archivos del proyecto. Crea una tabla con 5 columnas, usa una fila por regla y completa estas cinco columnas
 
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Qué pide la regla. Resúmela en una frase y con tus propias palabras. Si necesitas varias frases, puede que estés mezclando más de una regla.
+
+Qué se revisó para comprobarla. Indica el comando ejecutado o el archivo consultado. Sin esta información no hay forma de saber en qué se apoya el veredicto.
+
+Veredicto. Solo puede ser se cumple, no se cumple o no se puede comprobar con la información disponible. Este último caso también es un resultado válido. Significa que la regla no deja suficiente evidencia para verificarla.
+
+Evidencia. Escríbela en una línea. Si la regla no se cumple, indica dónde se incumple. Si no se puede comprobar, explica qué información falta.
+
+Qué harías con ella. Elige una opción: dejarla, borrarla o convertirla en una comprobación automática.
+
+Guarda el resultado en docs/auditoria/ogm.md
+
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** funcionó a la primera.
